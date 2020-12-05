@@ -26,6 +26,9 @@ import Select from '../Select/Select';
 import CoinSearch from '../CoinSearch/CoinSearch';
 import { spreadsheetSetDemo, spreadsheetSetLink } from '../../redux/actions/spreadsheet';
 import AddSpreadsheetBtn from '../AddSpreadsheetBtn/AddSpreadsheetBtn';
+import { LightTooltip } from '../TableRow/TableRowStyles';
+import Switch from '../Switch/Switch';
+import { tableGroupOpenAll } from '../../redux/actions/table';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -66,6 +69,10 @@ export default function Layout() {
         setValue(newValue);
     };
 
+    const handleCloseAllGroup = (bool) => {
+        dispatch(tableGroupOpenAll(!bool));
+    };
+
     React.useEffect(() => {
         const rootEl = document.getElementById('root');
         /**
@@ -86,7 +93,7 @@ export default function Layout() {
             <Grid container spacing={3} alignItems="center">
                 <Grid container item xs={12} lg={5} xxl={4} alignItems="center" className={classes.headerCol1}>
                     <Grid item xs="auto" className={classes.statistic}>
-                        {!table.items.length ? null : !market.loading ? (
+                        {!table.items.length && table.loading ? null : !market.loading ? (
                             <Total
                                 data={table.items.map((item) => ({ val: item.val, profit: item.profit }))}
                                 symbol={currency.symbol}
@@ -144,6 +151,18 @@ export default function Layout() {
             <TabPanel value={value} index={0}>
                 {spreadsheet.link ? (
                     <div className={classes.table}>
+                        <div className={classes.switch}>
+                            <LightTooltip placement="bottom-start" title={t('collapse_groups')}>
+                                <div>
+                                    <Switch
+                                        size="small"
+                                        checked={!!table.groupOpen.length}
+                                        handleChange={handleCloseAllGroup}
+                                    />
+                                </div>
+                            </LightTooltip>
+                        </div>
+
                         {!!table.columnsHidden.length && (
                             <Button
                                 variant="contained"
@@ -178,9 +197,9 @@ export default function Layout() {
                             </Typography>
                             <CoinSearch />
                         </Grid>
-                        <Grid item sm={10} md={9} lg={7} xl={6}>
+                        <Grid item sm={10} md={9} lg={7} xxl={6}>
                             <Typography variant="h5" component="h2" style={{ marginBottom: '1rem' }}>
-                                Crypto Portfolio
+                                BC Portfolio
                             </Typography>
                             <About lang={i18n.language} />
                             <Paper variant="outlined" style={{ padding: '2rem', margin: '2rem 0 0' }}>

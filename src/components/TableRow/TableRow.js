@@ -33,6 +33,7 @@ export const TableRow = React.memo((props) => {
     const {
         marketLoading,
         marketHasItems,
+        isLoading,
         errorText,
         fiat,
         fiatSymbol,
@@ -122,7 +123,7 @@ export const TableRow = React.memo((props) => {
                     textAlign: 'right'
                 }}
             >
-                {!Number.isNaN(buyPrice) && buyPrice
+                {!Number.isNaN(buyPrice) && buyPrice && !isLoading
                     ? fiat === 'btc'
                         ? `${buyPrice.toFixed(8)} ₿`
                         : fiat === 'usd' || fiat === 'eur'
@@ -153,7 +154,7 @@ export const TableRow = React.memo((props) => {
                 )}
 
                 <div className={`${classes.load} ${marketLoading ? classes.loadActive : null}`}>
-                    {!Number.isNaN(price) && price
+                    {!Number.isNaN(price) && price && !isLoading
                         ? fiat === 'btc'
                             ? `${price.toFixed(8)} ₿`
                             : fiat === 'usd' || fiat === 'eur'
@@ -165,12 +166,13 @@ export const TableRow = React.memo((props) => {
 
             <div
                 hidden={columnsHidden.includes('change')}
-                className={classes.col}
+                className={`${classes.col} ${
+                    Number.isNaN(change) ? '' : change < 0 ? classes.textRed : classes.textGreen
+                }`}
                 style={{
                     width: colWidth.col5,
                     textAlign: 'right',
-                    position: 'relative',
-                    color: Number.isNaN(change) ? 'text.primary' : change < 0 ? 'red' : 'green'
+                    position: 'relative'
                 }}
             >
                 {!Number.isNaN(change) && change ? `${change.toFixed(2)}%` : '—'}
@@ -224,14 +226,15 @@ export const TableRow = React.memo((props) => {
 
             <div
                 hidden={columnsHidden.includes('profit')}
-                className={classes.col}
+                className={`${classes.col} ${
+                    isLoading || Number.isNaN(profit) ? '' : profit < 0 ? classes.textRed : classes.textGreen
+                }`}
                 style={{
                     width: colWidth.col6,
                     textAlign: 'right',
-                    color: Number.isNaN(profit) ? 'text.primary' : profit < 0 ? 'red' : 'green'
                 }}
             >
-                {!Number.isNaN(profit) && profit
+                {!Number.isNaN(profit) && profit && !isLoading
                     ? fiat === 'btc'
                         ? `${profit.toFixed(8)}`
                         : `${decimalFormat(profit, 2)}`
@@ -246,7 +249,7 @@ export const TableRow = React.memo((props) => {
                     textAlign: 'right'
                 }}
             >
-                {!Number.isNaN(val) && val
+                {!Number.isNaN(val) && val && !isLoading
                     ? fiat === 'btc'
                         ? `${val.toFixed(8)} ₿`
                         : fiat === 'usd' || fiat === 'eur'

@@ -12,12 +12,10 @@ import { useStyles } from './TableStyles';
 import TableHeader from '../TableHeader/TableHeader';
 import { TableRow } from '../TableRow/TableRow';
 import { tableGroupOpen } from '../../redux/actions/table';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
 import AddSpreadsheetBtn from '../AddSpreadsheetBtn/AddSpreadsheetBtn';
 
 const colWidth = {
-    col1: 120,
+    col1: 100,
     col2: 145,
     col3: 130,
     col4: 130,
@@ -48,6 +46,7 @@ export default function Table({ handleClickOpen }) {
                 data={item}
                 fiat={currency.value}
                 fiatSymbol={currency.symbol}
+                isLoading={table.loading}
                 marketLoading={market.loading}
                 marketHasItems={!!market.items.length}
                 errorText={market.error}
