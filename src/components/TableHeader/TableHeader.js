@@ -5,9 +5,7 @@ import { useTranslation } from 'react-i18next';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import Button from '@material-ui/core/Button';
 import { useStyles } from './TableHeaderStyles';
-import { tableGroupOpenAll, tableSetSort } from '../../redux/actions/table';
-import Switch from '../Switch/Switch';
-import { LightTooltip } from '../TableRow/TableRowStyles';
+import { tableSetSort } from '../../redux/actions/table';
 
 export const tableHeadList = [
     { id: 'label', title: 'coin' },
@@ -30,20 +28,8 @@ export default function TableHeader({ colWidth }) {
         dispatch(tableSetSort(id));
     };
 
-    const handleCloseAllGroup = (bool) => {
-        dispatch(tableGroupOpenAll(!bool));
-    };
-
     return (
         <div className={classes.root}>
-            <div className={classes.switch}>
-                <LightTooltip placement="top-start" title={t('collapse_groups')}>
-                    <div>
-                        <Switch size="small" checked={!!table.groupOpen.length} handleChange={handleCloseAllGroup} />
-                    </div>
-                </LightTooltip>
-            </div>
-
             {tableHeadList.map((item, idx) => (
                 <Button
                     hidden={table.columnsHidden.includes(item.id)}

@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((/* theme */) => ({
     root: {
         display: 'flex',
         borderBottom: '1px solid #ccc',
@@ -46,20 +46,5 @@ export const useStyles = makeStyles((theme) => ({
     col8: {
         justifyContent: 'flex-start',
         flexGrow: 1
-    },
-    switch: {
-        position: 'absolute',
-        zIndex: 1,
-        top: 1,
-        left: 10,
-        [theme.breakpoints.up('lg')]: {
-            top: 2
-        },
-        [theme.breakpoints.up('xl')]: {
-            top: -1
-        },
-        [theme.breakpoints.up('xxl')]: {
-            top: -2
-        }
     }
 }));

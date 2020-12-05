@@ -4,7 +4,7 @@ import { marketError, marketFetchDataSuccess, marketLoading } from '../actions/m
 import { schemaMarket } from '../../api/schemas';
 import { MARKET_API, request } from '../../api/api';
 // import { appLoading } from '../actions/app';
-import { tableSetData } from '../actions/table';
+import { tableLoading, tableSetData } from '../actions/table';
 
 function* fetchMarket({ payload: { spreadsheet, currency } }) {
     const state = yield select();
@@ -46,6 +46,7 @@ function* fetchMarket({ payload: { spreadsheet, currency } }) {
         yield put(tableSetData(extendTableData, normalizedData, currency, state.table.sortBy, state.table.sortDesc));
 
         yield put(marketLoading(false));
+        yield put(tableLoading(false));
         // yield put(appLoading(false));
     } catch (err) {
         yield put(marketError('Market error! ' + err));

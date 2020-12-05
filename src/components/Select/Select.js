@@ -8,6 +8,7 @@ import ListItem from '@material-ui/core/ListItem';
 import { useStyles } from './SelectStyles';
 import { currencySetValue } from '../../redux/actions/currency';
 import { marketFetchData } from '../../redux/actions/market';
+import { tableLoading } from '../../redux/actions/table';
 
 const fiatList = [
     { id: 'btc', title: 'BTC', symbol: '₿', image: '' },
@@ -40,6 +41,7 @@ export default function Select() {
     };
 
     const handleClick = (e) => {
+        dispatch(tableLoading(true));
         dispatch(
             currencySetValue({
                 value: e.currentTarget.id,

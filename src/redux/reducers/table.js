@@ -6,7 +6,8 @@ export const initialState = {
     sortDesc: !localStorage.getItem('sortDesc') ? false : localStorage.getItem('sortDesc'),
     groupOpen: !localStorage.getItem('groupOpen') ? [] : JSON.parse(localStorage.getItem('groupOpen')),
     columnsHidden: !localStorage.getItem('columnsHidden') ? [] : JSON.parse(localStorage.getItem('columnsHidden')),
-    items: []
+    items: [],
+    loading: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -15,6 +16,13 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 items: action.data
+            };
+        }
+
+        case C.TABLE_LOADING: {
+            return {
+                ...state,
+                loading: action.bool
             };
         }
 

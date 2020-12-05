@@ -54,7 +54,7 @@ export const compileTableData = (
             return {
                 ...item,
                 label: item.label || '',
-                quantity: item.quantity,
+                quantity: item.quantity || 0,
                 buyPrice:
                     currency.value === 'btc'
                         ? item.title.toLowerCase() === 'bitcoin'
@@ -190,8 +190,8 @@ export const compileTableData = (
                 price:
                     currency.value === 'btc'
                         ? marketItems.filter((i) => i.title.toLowerCase() === key.toLowerCase())[0]?.price /
-                          btcCurrentPrice
-                        : marketItems.filter((i) => i.title.toLowerCase() === key.toLowerCase())[0]?.price,
+                          btcCurrentPrice || 0
+                        : marketItems.filter((i) => i.title.toLowerCase() === key.toLowerCase())[0]?.price || 0,
                 profit: sum.profit,
                 change: (sum.profit * 100) / ((sum.buyPrice / sum.quantity) * sum.quantity),
                 wallet: walletList.join(', '),

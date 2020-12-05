@@ -29,12 +29,16 @@ export const useStyles = makeStyles((theme) => ({
         width: '2rem',
         height: '2rem',
         marginTop: '-0.4rem'
+    },
+    toggleTooltip: {
+        fontSize: '1em',
+        marginTop: '-.15em'
     }
 }));
 
 export const HtmlTooltip = withStyles((theme) => ({
     tooltip: {
-        backgroundColor: '#f5f5f9',
+        backgroundColor: '#fff',
         width: 320,
         height: 320,
         maxWidth: 320,

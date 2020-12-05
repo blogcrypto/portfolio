@@ -40,7 +40,7 @@ export const useStyles = makeStyles(theme => ({
     },
     badge: {
         top: -6,
-        left: 0,
+        left: 45,
         fontSize: '10px !important',
         padding: '2px 8px !important',
         position: 'absolute !important',
@@ -63,5 +63,17 @@ export const useStyles = makeStyles(theme => ({
                 margin: '0 10px 0 0 !important'
             }
         },
+    },
+    switch: {
+        position: 'absolute',
+        zIndex: 1,
+        top: -10,
+        left: 12,
+        [theme.breakpoints.up('xl')]: {
+            top: -12
+        },
+        [theme.breakpoints.up('xxl')]: {
+            top: -13
+        }
     }
 }));

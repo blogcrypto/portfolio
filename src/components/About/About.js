@@ -10,7 +10,7 @@ export default function About({ lang }) {
             {lang === 'ru' ? (
                 <div>
                     <p>
-                        <strong>Crypto Portfolio</strong> – полностью бесплатное, анонимное приложение с{' '}
+                        <strong>BC Portfolio</strong> – полностью бесплатное, анонимное приложение с{' '}
                         <a
                             className="ext"
                             href="https://ru.wikipedia.org/wiki/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5"
@@ -22,7 +22,7 @@ export default function About({ lang }) {
                         для отслеживания и анализа своих крипто активов со всех криптовалютных бирж и кошельков.
                     </p>
                     <p>
-                        Crypto Portfolio не собирает и не хранит какую либо информацию своих пользователей. Вся
+                        <strong>BC Portfolio</strong> не собирает и не хранит какую либо информацию своих пользователей. Вся
                         необходимая для работы приложения информация хранится в приложении{' '}
                         <a
                             className="ext"
@@ -52,12 +52,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -68,12 +68,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -84,12 +84,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -100,12 +100,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -116,12 +116,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -132,12 +132,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -148,12 +148,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -164,12 +164,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -180,12 +180,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                     </ul>
@@ -204,30 +204,30 @@ export default function About({ lang }) {
                             placement="top"
                             arrow
                             title={
-                                <img className={classes.img} src="/favicon/android-chrome-512x512.png" alt="Table" />
+                                <img className={classes.img} src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png" alt="Table" />
                             }
                         >
-                            <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                            <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                         </HtmlTooltip>{' '}
                         и открыть доступ к таблице по ссылке{' '}
                         <HtmlTooltip
                             placement="top"
                             arrow
                             title={
-                                <img className={classes.img} src="/favicon/android-chrome-512x512.png" alt="Table" />
+                                <img className={classes.img} src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png" alt="Table" />
                             }
                         >
-                            <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                            <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                         </HtmlTooltip>
                         . После добавления ссылки на таблицу{' '}
                         <HtmlTooltip
                             placement="top"
                             arrow
                             title={
-                                <img className={classes.img} src="/favicon/android-chrome-512x512.png" alt="Table" />
+                                <img className={classes.img} src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png" alt="Table" />
                             }
                         >
-                            <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                            <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                         </HtmlTooltip>
                         , изменения в таблице будут отображаться в приложении.
                     </p>
@@ -287,7 +287,7 @@ export default function About({ lang }) {
             ) : (
                 <div>
                     <p>
-                        <strong>Crypto Portfolio</strong> is a completely free,{' '}
+                        <strong>BC Portfolio</strong> is a completely free,{' '}
                         <a
                             className="ext"
                             href="https://en.wikipedia.org/wiki/Open-source_software"
@@ -300,7 +300,7 @@ export default function About({ lang }) {
                         and wallets.
                     </p>
                     <p>
-                        Crypto Portfolio does not collect or store any information from its users. All information
+                        <strong>BC Portfolio</strong> does not collect or store any information from its users. All information
                         necessary for the application to work is stored in the{' '}
                         <a
                             className="ext"
@@ -331,12 +331,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -347,12 +347,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -363,12 +363,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -379,12 +379,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -395,12 +395,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -411,12 +411,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -427,12 +427,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -443,12 +443,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                         <li>
@@ -459,12 +459,12 @@ export default function About({ lang }) {
                                 title={
                                     <img
                                         className={classes.img}
-                                        src="/favicon/android-chrome-512x512.png"
+                                        src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png"
                                         alt="Table"
                                     />
                                 }
                             >
-                                <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                                <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                             </HtmlTooltip>
                         </li>
                     </ul>
@@ -483,30 +483,30 @@ export default function About({ lang }) {
                             placement="top"
                             arrow
                             title={
-                                <img className={classes.img} src="/favicon/android-chrome-512x512.png" alt="Table" />
+                                <img className={classes.img} src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png" alt="Table" />
                             }
                         >
-                            <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                            <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                         </HtmlTooltip>{' '}
                         and open access by link{' '}
                         <HtmlTooltip
                             placement="top"
                             arrow
                             title={
-                                <img className={classes.img} src="/favicon/android-chrome-512x512.png" alt="Table" />
+                                <img className={classes.img} src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png" alt="Table" />
                             }
                         >
-                            <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                            <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                         </HtmlTooltip>
                         . After adding the link to the spreadsheet{' '}
                         <HtmlTooltip
                             placement="top"
                             arrow
                             title={
-                                <img className={classes.img} src="/favicon/android-chrome-512x512.png" alt="Table" />
+                                <img className={classes.img} src="https://blogcrypto.info/public/favicon/android-chrome-512x512.png" alt="Table" />
                             }
                         >
-                            <InfoOutlinedIcon style={{ fontSize: '1em' }} color="primary" />
+                            <InfoOutlinedIcon className={classes.toggleTooltip} color="primary" />
                         </HtmlTooltip>
                         , changes in the spreadsheet will be reflected in the application.
                     </p>
