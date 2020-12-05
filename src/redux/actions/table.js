@@ -6,6 +6,11 @@ export const tableSetData = (extData, marketItems, currency, sortBy, sortDesc) =
     data: sortTableRows(compileTableData(extData, marketItems, currency, sortBy, sortDesc), sortBy, sortDesc)
 });
 
+export const tableLoading = (bool) => ({
+    type: C.TABLE_LOADING,
+    bool
+});
+
 export const tableSetSort = (id) => {
     localStorage.setItem('sortBy', id);
 

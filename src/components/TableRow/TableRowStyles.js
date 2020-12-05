@@ -6,7 +6,8 @@ export const useStyles = makeStyles((theme) => ({
     col: {
         padding: '3px 15px 3px 10px',
         flexShrink: 0,
-        fontSize: 14
+        fontSize: 14,
+        whiteSpace: 'nowrap'
     },
     typo: {
         fontSize: 14
@@ -55,6 +56,12 @@ export const useStyles = makeStyles((theme) => ({
         right: -5,
         top: 0,
         bottom: 0
+    },
+    textGreen: {
+        color: theme.palette.success.dark
+    },
+    textRed: {
+        color: theme.palette.error.main
     }
 }));
 
