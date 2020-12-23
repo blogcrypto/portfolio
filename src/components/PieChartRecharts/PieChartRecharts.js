@@ -4,7 +4,7 @@ import { PieChart as PC, Pie, Sector, Cell } from 'recharts';
 import { decimalFormat, lightenDarkenColor } from '../../utils/utils';
 
 const setColors = (count) => {
-    const mainColors = ['#7eb8ff'];
+    const mainColors = ['#0d6efd'];
     const grade = count;
     const colors = [];
 
@@ -12,11 +12,11 @@ const setColors = (count) => {
         let num = 0;
         for (let j = 0; j < grade; j += 1) {
             colors.push(lightenDarkenColor(mainColors[i], num));
-            num -= 30 / count;
+            num += 30 / count;
         }
     }
 
-    return colors.reverse();
+    return colors;
 };
 
 const renderActiveShape = (props) => {

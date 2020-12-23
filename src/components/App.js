@@ -9,7 +9,7 @@ import '../i18n';
 import Layout from './Layout/Layout';
 
 export default function App() {
-    const { i18n } = useTranslation('translations');
+    const {i18n} = useTranslation('translations');
 
     React.useEffect(() => {
         if (i18n) {
@@ -26,8 +26,8 @@ export default function App() {
     }, [i18n]);
 
     return (
-        <Provider store={store}>
-            <MuiThemeProvider theme={theme}>
+        <Provider store={ store }>
+            <MuiThemeProvider theme={ theme }>
                 <CssBaseline />
                 <GlobalCss />
                 <Layout />
