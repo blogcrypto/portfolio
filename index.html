@@ -32,14 +32,8 @@
 
         .main-title {
             font-weight: normal;
-            margin-top: 3rem;
+            margin-top: 1rem;
             font-size: 2rem;
-        }
-
-        @media (min-width: 576px) {
-            .main-title {
-                margin-top: 1rem;
-            }
         }
 
         .title-second {
@@ -67,6 +61,12 @@
 </head>
 <body>
 <div class="wrapper">
+    <label>
+        <select id="langSwitch">
+            <option value="en">En</option>
+            <option value="ru">Ru</option>
+        </select>
+    </label>
     <h1 class="main-title">BC Portfolio Demo</h1>
     <div class="github-demo">
         <a class="github-demo__link" href="https://github.com/blogcrypto/portfolio" target="_blank" rel="noopener noreferrer">
@@ -85,14 +85,24 @@
                     fill="currentColor" class="octo-body"></path>
             </svg>
         </a>
-
     </div>
-
     <h4 class="title-second">
         <a href="https://docs.google.com/spreadsheets/d/12aYS3GD7r4IFt92GYBvs_N5h9alE57a2FWxwdOnP_ik/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Show </a>demo spreadsheet
     </h4>
     <div id="root" data-id="12aYS3GD7r4IFt92GYBvs_N5h9alE57a2FWxwdOnP_ik"></div>
 </div>
 <script src="dist/main.bundle.js"></script>
+<script>
+    const switcher = document.querySelector("#langSwitch");
+
+    document.addEventListener("DOMContentLoaded", function() {
+        switcher.value = localStorage.getItem("locale") || "en";
+    })
+
+    switcher.addEventListener("change", function(e) {
+        localStorage.setItem("locale", e.currentTarget.value);
+        document.location.reload();
+    })
+</script>
 </body>
 </html>

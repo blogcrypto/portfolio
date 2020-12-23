@@ -1,3 +1,19 @@
+export const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
+export const isMobile = process.browser && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+/**
+ * Declension of words
+ *
+ * @param {number} number
+ * @param {[string]} wordsArr
+ * @param {[number]} cases
+ * @returns {string}
+ */
+export const declination = (number, wordsArr, cases = [2, 0, 1, 1, 1, 2]) =>
+    wordsArr[(number % 100 > 4 && number % 100 < 20)
+        ? 2
+        : cases[(number % 10 < 5) ? number % 10 : 5]];
+
 /**
  * Compares strings to sort
  *
