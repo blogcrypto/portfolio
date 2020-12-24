@@ -4,9 +4,9 @@
   "private": true,
   "homepage": "https://github.com/blogcrypto/portfolio",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -35,7 +35,8 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.21.5",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "react-app-rewired": "^2.1.8"
   },
   "browserslist": {
     "production": [
