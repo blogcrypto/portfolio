@@ -20,7 +20,7 @@ export default function SettingsClear() {
 
         localStorage.removeItem('groupOpen');
         localStorage.removeItem('sortBy');
-        localStorage.removeItem('sortDesc');
+        localStorage.removeItem('sortOrder');
         localStorage.removeItem('spreadsheetLink');
         localStorage.removeItem('currency');
         localStorage.removeItem('coinsList');

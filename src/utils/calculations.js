@@ -12,7 +12,8 @@ const calcChange = (priceSell, priceBuy, quantity) => {
     return ((priceSell * quantity - priceBuy * quantity) * 100) / (priceBuy * quantity);
 };
 
-export const sortTableRows = (arr = [], sortBy, reverse) => {
+export const sortTableRows = (arr = [], sortBy, order) => {
+
     const sortedArr = arr.sort((a, b) => {
         if (typeof a[sortBy] === 'string' && typeof b[sortBy] === 'string') {
             return sortStr(a[sortBy], b[sortBy]);
@@ -23,7 +24,7 @@ export const sortTableRows = (arr = [], sortBy, reverse) => {
         // eslint-disable-next-line no-console
         return console.error(`Not valid format data ${a} or ${b} for sortTableRows!`);
     });
-    return reverse ? sortedArr.reverse() : sortedArr;
+    return order === 'asc' ? sortedArr.reverse() : sortedArr;
 };
 
 export const compileTableData = (
@@ -44,7 +45,7 @@ export const compileTableData = (
     ],
     currency,
     sortBy,
-    sortDesc
+    sortOrder
 ) => {
     const btcInUsd = marketItems.filter((coin) => coin.title.toLowerCase() === 'tether')[0].price;
     const btcCurrentPrice = marketItems.filter((coin) => coin.title.toLowerCase() === 'bitcoin')[0].price;
@@ -177,7 +178,7 @@ export const compileTableData = (
                     return sortStr(a, b);
                 });
 
-                if (sortDesc) walletList.reverse();
+                if (sortOrder === 'asc') walletList.reverse();
             }
 
             tableArr.push({
@@ -196,7 +197,7 @@ export const compileTableData = (
                 change: (sum.profit * 100) / ((sum.buyPrice / sum.quantity) * sum.quantity),
                 wallet: walletList.join(', '),
                 showIndicator: indicators === groupArr.length,
-                group: sortTableRows(groupArr, sortBy, sortDesc)
+                group: sortTableRows(groupArr, sortBy, sortOrder)
             });
         } else {
             /**

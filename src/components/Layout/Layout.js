@@ -36,8 +36,12 @@ function TabPanel(props) {
 
     return (
         // eslint-disable-next-line react/jsx-props-no-spreading
-        <div role="tab" hidden={ value !== index } id={ `tab-${ index }` }
-             aria-labelledby={ `tab-${ index }` } { ...other }>
+        <div
+            role="tab"
+            hidden={ value !== index }
+            id={ `tab-${ index }` }
+            aria-labelledby={ `tab-${ index }` } { ...other }
+        >
             { value === index && <>{ children }</> }
         </div>
     );
@@ -152,90 +156,92 @@ export default function Layout() {
                 </Grid>
             </Grid>
 
-            <TabPanel value={ value } index={ 0 }>
-                { spreadsheet.link ? (
-                    <div className={ classes.table }>
+            <div role="tablist">
+                <TabPanel value={ value } index={ 0 }>
+                    { spreadsheet.link ? (
+                        <div className={ classes.table }>
 
-                        { !spreadsheet.error && <>
-                            <div className={ classes.switch }>
-                                <LightTooltip placement="bottom-start" title={ t('collapse_groups') }>
-                                    <div>
-                                        <Switch
-                                            size="small"
-                                            checked={ !!table.groupOpen.length }
-                                            handleChange={ handleCloseAllGroup }
-                                        />
-                                    </div>
-                                </LightTooltip>
-                            </div>
+                            { !spreadsheet.error && <>
+                                <div className={ classes.switch }>
+                                    <LightTooltip placement="bottom-start" title={ t('collapse_groups') }>
+                                        <div>
+                                            <Switch
+                                                size="small"
+                                                checked={ !!table.groupOpen.length }
+                                                handleChange={ handleCloseAllGroup }
+                                            />
+                                        </div>
+                                    </LightTooltip>
+                                </div>
 
-                            { !!table.columnsHidden.length && (
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    disableElevation
-                                    classes={ {
-                                        root: classes.badge
-                                    } }
-                                    onClick={ () => handleClickOpen('panel2') }
-                                >
-                                    { `${ table.columnsHidden.length }
+                                { !!table.columnsHidden.length && (
+                                    <Button
+                                        variant="contained"
+                                        color="primary"
+                                        disableElevation
+                                        classes={ {
+                                            root: classes.badge
+                                        } }
+                                        onClick={ () => handleClickOpen('panel2') }
+                                    >
+                                        { `${ table.columnsHidden.length }
                                         ${ declination(table.columnsHidden.length, [
-                                            t('hidden_columns-1'),
-                                            t('hidden_columns-2'),
-                                            t('hidden_columns-5')
-                                        ]
-                                    ) }` }
-                                </Button>
-                            ) }
-                        </> }
+                                                t('hidden_columns-1'),
+                                                t('hidden_columns-2'),
+                                                t('hidden_columns-5')
+                                            ]
+                                        ) }` }
+                                    </Button>
+                                ) }
+                            </> }
 
-                        <Table handleClickOpen={ handleClickOpen } />
+                            <Table handleClickOpen={ handleClickOpen } />
+                        </div>
+                    ) : (
+                          <AddSpreadsheetBtn handleClickOpen={ handleClickOpen } />
+                      ) }
+                </TabPanel>
+
+                <TabPanel value={ value } index={ 1 }>
+                    <PieChart />
+                </TabPanel>
+
+                <TabPanel value={ value } index={ 2 }>
+                    <div style={ {padding: '1.5rem 0'} }>
+                        <Grid container spacing={ 3 }>
+                            <Grid item xs={ 12 } xl={ 5 } style={ {marginBottom: '2rem'} }>
+                                <Typography variant="h5" component="h2" style={ {marginBottom: '1rem'} }>
+                                    { t('supported_coins') }
+                                </Typography>
+                                <CoinSearch />
+                            </Grid>
+                            <Grid item sm={ 10 } md={ 9 } lg={ 7 } xxl={ 6 }>
+                                <Typography variant="h5" component="h2" style={ {marginBottom: '1rem'} }>
+                                    BC Portfolio
+                                </Typography>
+                                <About lang={ i18n.language } />
+                                <Paper variant="outlined" style={ {padding: '2rem', margin: '2rem 0 0'} }>
+                                    <p>{ t('contacts_message') }</p>
+
+                                    <Button
+                                        variant="contained"
+                                        color="primary"
+                                        style={ {color: '#fff'} }
+                                        href={
+                                            i18n.language === 'ru'
+                                            ? 'https://blogcrypto.info/ru/about#contacts'
+                                            : 'https://blogcrypto.info/about#contacts'
+                                        }
+                                        target="_blank"
+                                    >
+                                        { t('contacts_button') }
+                                    </Button>
+                                </Paper>
+                            </Grid>
+                        </Grid>
                     </div>
-                ) : (
-                      <AddSpreadsheetBtn handleClickOpen={ handleClickOpen } />
-                  ) }
-            </TabPanel>
-
-            <TabPanel value={ value } index={ 1 }>
-                <PieChart />
-            </TabPanel>
-
-            <TabPanel value={ value } index={ 2 }>
-                <div style={ {padding: '1.5rem 0'} }>
-                    <Grid container spacing={ 3 }>
-                        <Grid item xs={ 12 } xl={ 5 } style={ {marginBottom: '2rem'} }>
-                            <Typography variant="h5" component="h2" style={ {marginBottom: '1rem'} }>
-                                { t('supported_coins') }
-                            </Typography>
-                            <CoinSearch />
-                        </Grid>
-                        <Grid item sm={ 10 } md={ 9 } lg={ 7 } xxl={ 6 }>
-                            <Typography variant="h5" component="h2" style={ {marginBottom: '1rem'} }>
-                                BC Portfolio
-                            </Typography>
-                            <About lang={ i18n.language } />
-                            <Paper variant="outlined" style={ {padding: '2rem', margin: '2rem 0 0'} }>
-                                <p>{ t('contacts_message') }</p>
-
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    style={ {color: '#fff'} }
-                                    href={
-                                        i18n.language === 'ru'
-                                        ? 'https://blogcrypto.info/ru/about#contacts'
-                                        : 'https://blogcrypto.info/about#contacts'
-                                    }
-                                    target="_blank"
-                                >
-                                    { t('contacts_button') }
-                                </Button>
-                            </Paper>
-                        </Grid>
-                    </Grid>
-                </div>
-            </TabPanel>
+                </TabPanel>
+            </div>
 
             <SettingsModal open={ modalOpen.isOpen } handleClose={ handleClose } panel={ modalOpen.panel } />
         </div>

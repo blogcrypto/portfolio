@@ -1,9 +1,9 @@
 import C from '../constants';
 import { compileTableData, sortTableRows } from '../../utils/calculations';
 
-export const tableSetData = (extData, marketItems, currency, sortBy, sortDesc) => ({
+export const tableSetData = (extData, marketItems, currency, sortBy, sortOrder) => ({
     type: C.TABLE_SET_DATA,
-    data: sortTableRows(compileTableData(extData, marketItems, currency, sortBy, sortDesc), sortBy, sortDesc)
+    data: sortTableRows(compileTableData(extData, marketItems, currency, sortBy, sortOrder), sortBy, sortOrder)
 });
 
 export const tableLoading = (bool) => ({
