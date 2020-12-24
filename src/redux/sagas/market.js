@@ -43,7 +43,7 @@ function* fetchMarket({ payload: { spreadsheet, currency } }) {
             return { ...coin, ...addMarketData };
         });
 
-        yield put(tableSetData(extendTableData, normalizedData, currency, state.table.sortBy, state.table.sortDesc));
+        yield put(tableSetData(extendTableData, normalizedData, currency, state.table.sortBy, state.table.sortOrder));
 
         yield put(marketLoading(false));
         yield put(tableLoading(false));

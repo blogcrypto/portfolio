@@ -46,7 +46,7 @@ export default function TableHeader({ colWidth }) {
                         {`${t(item.title)}${item.id === 'profit' ? `, ${currency.symbol}` : ''}`}
                         {table.sortBy === item.id && (
                             <span className={classes.sort}>
-                                {table.sortDesc ? (
+                                {table.sortOrder === 'desc' ? (
                                     <ArrowRightAltIcon
                                         fontSize="small"
                                         className={`${classes.arrow} ${classes.arrowTop}`}
