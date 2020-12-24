@@ -3,7 +3,7 @@ import { sortTableRows } from '../../utils/calculations';
 
 export const initialState = {
     sortBy: !localStorage.getItem('sortBy') ? 'label' : localStorage.getItem('sortBy'),
-    sortDesc: !localStorage.getItem('sortDesc') ? false : localStorage.getItem('sortDesc'),
+    sortOrder: !localStorage.getItem('sortOrder') ? 'desc' : localStorage.getItem('sortOrder'),
     groupOpen: !localStorage.getItem('groupOpen') ? [] : JSON.parse(localStorage.getItem('groupOpen')),
     columnsHidden: !localStorage.getItem('columnsHidden') ? [] : JSON.parse(localStorage.getItem('columnsHidden')),
     items: [],
@@ -28,15 +28,22 @@ const reducer = (state = initialState, action) => {
 
         case C.TABLE_SET_SORT: {
             const sort = state.sortBy === action.id ? state.sortBy : action.id;
-            const desc = state.sortBy !== action.id ? state.sortDesc : !state.sortDesc;
 
-            localStorage.setItem('sortDesc', desc);
+            const order = state.sortBy !== action.id
+                          ? state.sortOrder
+                          : state.sortOrder === 'asc'
+                            ? 'desc'
+                            : 'asc';
+            // const order = state.sortBy === action.id ? state.sortOrder : action.sortOrder;
+            // const order = state.sortOrder === 'asc' ? 'desc' : 'asc'
+
+            localStorage.setItem('sortOrder', order);
 
             return {
                 ...state,
                 sortBy: sort,
-                sortDesc: desc,
-                items: sortTableRows(state.items, sort, desc)
+                sortOrder: order,
+                items: sortTableRows(state.items, sort, order)
             };
         }
 
@@ -44,7 +51,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 sortBy: 'label',
-                sortDesc: false,
+                sortOrder: false,
                 items: sortTableRows(state.items, 'label', false)
             };
         }

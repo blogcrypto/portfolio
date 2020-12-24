@@ -5,17 +5,16 @@ import { coinsListLoading, coinsListFetchDataSuccess, coinsListError } from '../
 
 export function* fetchCoins() {
     const expirationDays = 1;
-    const timestamp = +localStorage.getItem('coinsListTimestamp');
-    const isExpired = !(timestamp && timestamp + expirationDays * 24 * 3600 * 1000 > Date.now());
+    const timestamp = localStorage.getItem('coinsListTimestamp');
+    const isExpired = !(timestamp && +timestamp + expirationDays * 24 * 3600 * 1000 > Date.now());
 
-    if (localStorage.getItem('coinsList') && !isExpired) {
+    if (localStorage.getItem('coinsList') !== 'undefined' && !isExpired) {
         return JSON.parse(localStorage.getItem('coinsList'));
     } else {
         yield put(coinsListLoading(true));
 
         try {
             const { data } = yield call(request, MARKET_API + 'coins/list');
-
             yield put(coinsListFetchDataSuccess());
             yield put(coinsListLoading(false));
 

@@ -30,11 +30,10 @@ function* appGetData() {
             }
         ];
     }
-    yield put(tableSetData(spreadsheet, undefined, state.currency.value, state.table.sortBy, state.table.sortDesc));
 
+    yield put(tableSetData(spreadsheet, undefined, state.currency.value, state.table.sortBy, state.table.sortOrder));
     yield put(appLoading(false));
-
-    yield put({ type: C.MARKET_FETCH_DATA, payload: { spreadsheet, currency: state.currency.value, coins } });
+    yield put({type: C.MARKET_FETCH_DATA, payload: {spreadsheet, currency: state.currency.value, coins}});
 }
 
-export default [takeEvery(C.APP_GET_DATA, appGetData)];
+export default [takeLatest(C.APP_GET_DATA, appGetData)];

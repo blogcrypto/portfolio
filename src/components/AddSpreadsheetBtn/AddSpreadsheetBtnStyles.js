@@ -5,6 +5,7 @@ export const useStyles = makeStyles(theme => ({
         display: 'inline-flex',
         alignItems: 'center',
         cursor: 'pointer',
+        outline: 'none',
         '&>span': {
             ...theme.typography.button,
             marginLeft: theme.spacing(3),
@@ -15,6 +16,9 @@ export const useStyles = makeStyles(theme => ({
         },
         '&:hover>.MuiFab-root': {
             background: theme.palette.primary.dark
+        },
+        '&:focus': {
+            outline: `1px solid ${theme.palette.primary.main}`
         }
     },
 }));
