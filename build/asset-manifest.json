@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/blogcrypto/portfolio/static/js/main.d3f7dacc.chunk.js",
-    "main.js.map": "/blogcrypto/portfolio/static/js/main.d3f7dacc.chunk.js.map",
-    "runtime-main.js": "/blogcrypto/portfolio/static/js/runtime-main.84adf0d9.js",
-    "runtime-main.js.map": "/blogcrypto/portfolio/static/js/runtime-main.84adf0d9.js.map",
-    "static/js/2.5adf0996.chunk.js": "/blogcrypto/portfolio/static/js/2.5adf0996.chunk.js",
-    "static/js/2.5adf0996.chunk.js.map": "/blogcrypto/portfolio/static/js/2.5adf0996.chunk.js.map",
+    "main.js": "/blogcrypto/portfolio/js/main.chunk.js",
+    "main.js.map": "/blogcrypto/portfolio/js/main.chunk.js.map",
+    "runtime-main.js": "/blogcrypto/portfolio/js/main.js",
+    "runtime-main.js.map": "/blogcrypto/portfolio/js/main.js.map",
+    "js/2.chunk.js": "/blogcrypto/portfolio/js/2.chunk.js",
+    "js/2.chunk.js.map": "/blogcrypto/portfolio/js/2.chunk.js.map",
     "index.html": "/blogcrypto/portfolio/index.html",
-    "static/js/2.5adf0996.chunk.js.LICENSE.txt": "/blogcrypto/portfolio/static/js/2.5adf0996.chunk.js.LICENSE.txt"
+    "js/2.chunk.js.LICENSE.txt": "/blogcrypto/portfolio/js/2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.84adf0d9.js",
-    "static/js/2.5adf0996.chunk.js",
-    "static/js/main.d3f7dacc.chunk.js"
+    "js/main.js",
+    "js/2.chunk.js",
+    "js/main.chunk.js"
   ]
 }
