@@ -8,7 +8,7 @@ export const useStyles = makeStyles(theme => ({
     },
     headerCol2: {
         marginBottom: theme.spacing(4),
-        marginTop: -theme.spacing(2),
+        marginTop: theme.spacing(-2),
         [theme.breakpoints.up('lg')]: {
             order: -1,
             marginTop: 0,

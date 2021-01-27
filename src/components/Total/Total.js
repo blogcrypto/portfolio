@@ -4,10 +4,10 @@ import { useStyles } from './TotalStyles';
 import { decimalFormat, sum } from '../../utils/utils';
 
 export default function Total(props) {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const classes = useStyles();
-    const { data, symbol, currency } = props;
-    const [value, setValue] = React.useState({ val: 0, profit: 0 });
+    const {data, symbol, currency} = props;
+    const [value, setValue] = React.useState({val: 0, profit: 0});
 
     React.useEffect(() => {
         if (data.length) {
@@ -27,33 +27,35 @@ export default function Total(props) {
 
     return (
         <>
-            <div className={classes.total}>
+            <div className={ classes.total }>
                 <span
-                    style={{
+                    style={ {
                         marginRight: '0.25rem',
                         marginBottom: '-135px',
                         color: '#777',
                         fontWeight: 'normal'
-                    }}
-                >{`${t('total')}:`}</span>
-                {currency === 'usd' || currency === 'eur' ? (
-                    <span>{`${symbol} ${value.val}`}</span>
+                    } }
+                >{ `${ t('total') }:` }</span>
+                { currency === 'usd' || currency === 'eur' ? (
+                    <span>{ `${ symbol }${ value.val }` }</span>
                 ) : (
-                    <span>{`${value.val} ${symbol}`}</span>
-                )}
+                      <span>{ `${ value.val } ${ symbol }` }</span>
+                  ) }
             </div>
             <div
-                className={classes.profit}
-                style={{
+                className={ classes.profit }
+                style={ {
                     color: parseFloat(value.profit) < 0 ? 'red' : 'green'
-                }}
+                } }
             >
-                <span style={{ marginRight: '0.5rem' }}>{`${t('profit')}:`}</span>
-                {currency === 'usd' || currency === 'eur' ? (
-                    <span>{`${symbol} ${value.profit}`}</span>
+                <span style={ {marginRight: '0.5rem'} }>{ `${ t('profit') }:` }</span>
+                { currency === 'usd' || currency === 'eur' ? (
+                    parseFloat(value.profit) < 0
+                    ? <span>{ `-${ symbol }${ decimalFormat(Math.abs(sum(data, 'profit')), 2) }` }</span>
+                    : <span>{ `${ symbol }${ value.profit }` }</span>
                 ) : (
-                    <span>{`${value.profit} ${symbol}`}</span>
-                )}
+                      <span>{ `${ value.profit } ${ symbol }` }</span>
+                  ) }
             </div>
         </>
     );

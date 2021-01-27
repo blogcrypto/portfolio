@@ -48,7 +48,7 @@ export function sortNum(a, b) {
     return 0;
 }
 
-export function decimalFormat(number, decimals = 0, decPoint = ',', thousandsSep = ' ') {
+export function decimalFormat(number, decimals = 0, decPoint = '.', thousandsSep = ' ') {
     let s;
 
     number = +String(number).replace(/[^0-9+\-Ee.]/g, '');

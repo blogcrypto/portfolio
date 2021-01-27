@@ -11,14 +11,18 @@ export const useStyles = makeStyles(theme => ({
             marginLeft: theme.spacing(3),
             color: theme.palette.primary.main
         },
+        '& span:not([class])': {
+            borderBottom: '1px solid transparent',
+            lineHeight: '1.4'
+        },
         '&:hover>span': {
             color: theme.palette.primary.dark
         },
         '&:hover>.MuiFab-root': {
             background: theme.palette.primary.dark
         },
-        '&:focus': {
-            outline: `1px solid ${theme.palette.primary.main}`
+        '&:focus span:not([class])': {
+            borderBottomColor: theme.palette.primary.main
         }
     },
 }));

@@ -130,7 +130,7 @@ export const TableRow = React.memo((props) => {
                   ? fiat === 'btc'
                     ? `${ buyPrice.toFixed(8) } ₿`
                     : fiat === 'usd' || fiat === 'eur'
-                      ? `${ fiatSymbol } ${ decimalFormat(buyPrice, 2) }`
+                      ? `${ fiatSymbol }${ decimalFormat(buyPrice, 2) }`
                       : `${ decimalFormat(buyPrice, 2) } ${ fiatSymbol }`
                   : '—' }
             </div>
@@ -165,7 +165,7 @@ export const TableRow = React.memo((props) => {
                       ? fiat === 'btc'
                         ? `${ price.toFixed(8) } ₿`
                         : fiat === 'usd' || fiat === 'eur'
-                          ? `${ fiatSymbol } ${ decimalFormat(price, 2) }`
+                          ? `${ fiatSymbol }${ decimalFormat(price, 2) }`
                           : `${ decimalFormat(price, 2) } ${ fiatSymbol }`
                       : '—' }
                 </div>
@@ -273,7 +273,7 @@ export const TableRow = React.memo((props) => {
                   ? fiat === 'btc'
                     ? `${ val.toFixed(8) } ₿`
                     : fiat === 'usd' || fiat === 'eur'
-                      ? `${ fiatSymbol } ${ decimalFormat(val, 2) }`
+                      ? `${ fiatSymbol }${ decimalFormat(val, 2) }`
                       : `${ decimalFormat(val, 2) } ${ fiatSymbol }`
                   : '—' }
             </div>

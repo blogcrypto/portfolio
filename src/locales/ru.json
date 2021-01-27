@@ -16,9 +16,9 @@
     "show_columns": "Показывать колонки",
     "current_link": "Идентификатор текущей ссылки",
     "enter_correct_link": "Введите корректную ссылку!",
-    "enter_a_link_to_your_google_spreadsheets": "Введите ссылку на вашу Гугл таблицу",
+    "enter_a_link_to_your_google_spreadsheets": "Вставьте ссылку на вашу Гугл таблицу",
     "example": "Пример",
-    "enter_your_spreadsheets_link": "Введите ссылку",
+    "enter_your_spreadsheets_link": "Вставьте ссылку",
     "ok": "ок",
     "clear": "Очистить",
     "settings": "Настройки",
@@ -49,5 +49,6 @@
     "date": "Дата",
     "collapse_groups": "Свернуть / развернуть все группы",
     "contacts_message": "Если вы нашли ошибку, хотите оставить отзыв или пожелание.",
-    "contacts_button": "Контакты"
+    "contacts_button": "Контакты",
+    "guide": "Руководство"
 }
