@@ -30,6 +30,7 @@ import { LightTooltip } from '../TableRow/TableRowStyles';
 import Switch from '../Switch/Switch';
 import { tableGroupOpenAll } from '../../redux/actions/table';
 import { declination } from '../../utils/utils';
+import Link from '@material-ui/core/Link';
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -198,7 +199,23 @@ export default function Layout() {
                             <Table handleClickOpen={ handleClickOpen } />
                         </div>
                     ) : (
-                          <AddSpreadsheetBtn handleClickOpen={ handleClickOpen } />
+                        <>
+                            <AddSpreadsheetBtn handleClickOpen={ handleClickOpen } />
+                            <div style={{ marginTop: '1rem'}}>
+                                <a
+                                    className="ext"
+                                    href={
+                                        i18n.language === 'ru'
+                                        ? 'https://blogcrypto.info/ru/guides/rukovodstvo-polzovatelya-bc-portfolio'
+                                        : 'https://blogcrypto.info/guides/bc-portfolio-app-user-guide'
+                                    }
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    { t('guide') }
+                                </a>
+                            </div>
+                        </>
                       ) }
                 </TabPanel>
 
@@ -233,6 +250,7 @@ export default function Layout() {
                                             : 'https://blogcrypto.info/about#contacts'
                                         }
                                         target="_blank"
+                                        rel="noopener noreferrer"
                                     >
                                         { t('contacts_button') }
                                     </Button>

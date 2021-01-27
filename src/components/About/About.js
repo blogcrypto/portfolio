@@ -344,7 +344,7 @@ export default function About({lang}) {
                             className="ext"
                             href="https://blogcrypto.info/ru/guides/rukovodstvo-polzovatelya-bc-portfolio"
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                         >
                             Подробное руководство
                         </a>
@@ -741,7 +741,7 @@ export default function About({lang}) {
                               className="ext"
                               href="https://blogcrypto.info/guides/bc-portfolio-app-user-guide"
                               target="_blank"
-                              rel="noreferrer"
+                              rel="noopener noreferrer"
                           >
                               Guide
                           </a>

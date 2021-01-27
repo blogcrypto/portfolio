@@ -196,7 +196,7 @@ export const compileTableData = (
                 profit: sum.profit,
                 change: (sum.profit * 100) / ((sum.buyPrice / sum.quantity) * sum.quantity),
                 wallet: walletList.join(', '),
-                showIndicator: indicators === groupArr.length,
+                showIndicator: !!indicators,
                 group: sortTableRows(groupArr, sortBy, sortOrder)
             });
         } else {
