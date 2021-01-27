@@ -16,9 +16,9 @@
     "show_columns": "Show columns",
     "current_link": "Current link",
     "enter_correct_link": "Enter correct link!",
-    "enter_a_link_to_your_google_spreadsheets": "Enter a link to your Google Spreadsheets",
+    "enter_a_link_to_your_google_spreadsheets": "Paste a link to your Google Spreadsheets",
     "example": "Example",
-    "enter_your_spreadsheets_link": "Enter your spreadsheets link",
+    "enter_your_spreadsheets_link": "Paste your spreadsheets link",
     "ok": "Ok",
     "clear": "Clear",
     "settings": "Settings",
@@ -49,5 +49,6 @@
     "date": "Date",
     "collapse_groups": "Collapse / expand all groups",
     "contacts_message": "If you find a bug or you want to leave a review.",
-    "contacts_button": "Contacts"
+    "contacts_button": "Contacts",
+    "guide": "Guide"
 }
