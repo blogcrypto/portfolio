@@ -58,63 +58,63 @@ export const compileTableData = (
                 quantity: item.quantity || 0,
                 buyPrice:
                     currency.value === 'btc'
-                        ? item.title.toLowerCase() === 'bitcoin'
-                            ? item.buyPrice * btcInUsd
-                            : item.buyPrice
-                        : item.title.toLowerCase() === 'bitcoin'
-                        ? (item.buyPrice * btcCurrentPrice) / (btcCurrentPrice / btcInUsd)
-                        : item.buyPrice * btcCurrentPrice,
+                    ? item.title.toLowerCase() === 'bitcoin'
+                      ? item.buyPrice * btcInUsd
+                      : item.buyPrice
+                    : item.title.toLowerCase() === 'bitcoin'
+                      ? (item.buyPrice * btcCurrentPrice) / (btcCurrentPrice / btcInUsd)
+                      : item.buyPrice * btcCurrentPrice,
                 price: item.price || 0,
                 profit:
                     currency.value === 'btc'
-                        ? item.title.toLowerCase() === 'bitcoin'
-                            ? calcProfit(item.price, item.buyPrice * btcInUsd, item.quantity, item.buyFee, item.sellFee)
-                            : calcProfit(
-                                  item.price / btcCurrentPrice,
-                                  item.buyPrice,
-                                  item.quantity,
-                                  item.buyFee,
-                                  item.sellFee
-                              )
-                        : item.title.toLowerCase() === 'bitcoin'
-                        ? calcProfit(item.price, item.buyPrice * btcInUsd, item.quantity, item.buyFee, item.sellFee)
-                        : calcProfit(
-                              item.price,
-                              item.buyPrice * btcCurrentPrice,
-                              item.quantity,
-                              item.buyFee,
-                              item.sellFee
-                          ),
+                    ? item.title.toLowerCase() === 'bitcoin'
+                      ? calcProfit(item.price, item.buyPrice * btcInUsd, item.quantity, item.buyFee, item.sellFee)
+                      : calcProfit(
+                            item.price / btcCurrentPrice,
+                            item.buyPrice,
+                            item.quantity,
+                            item.buyFee,
+                            item.sellFee
+                        )
+                    : item.title.toLowerCase() === 'bitcoin'
+                      ? calcProfit(item.price, item.buyPrice * btcInUsd, item.quantity, item.buyFee, item.sellFee)
+                      : calcProfit(
+                            item.price,
+                            item.buyPrice * btcCurrentPrice,
+                            item.quantity,
+                            item.buyFee,
+                            item.sellFee
+                        ),
                 change:
                     currency.value === 'btc'
-                        ? item.title.toLowerCase() === 'bitcoin'
-                            ? calcChange(
-                                  btcCurrentPrice,
-                                  item.buyPrice * btcInUsd,
-                                  item.quantity,
-                                  item.buyFee,
-                                  item.sellFee
-                              )
-                            : calcChange(
-                                  item.price / btcCurrentPrice,
-                                  item.buyPrice,
-                                  item.quantity,
-                                  item.buyFee,
-                                  item.sellFee
-                              )
-                        : item.title.toLowerCase() === 'bitcoin'
-                        ? calcChange(item.price, item.buyPrice * btcInUsd, item.quantity, item.buyFee, item.sellFee)
-                        : calcChange(
-                              item.price,
-                              item.buyPrice * btcCurrentPrice,
-                              item.quantity,
-                              item.buyFee,
-                              item.sellFee
-                          ),
+                    ? item.title.toLowerCase() === 'bitcoin'
+                      ? calcChange(
+                            btcCurrentPrice,
+                            item.buyPrice * btcInUsd,
+                            item.quantity,
+                            item.buyFee,
+                            item.sellFee
+                        )
+                      : calcChange(
+                            item.price / btcCurrentPrice,
+                            item.buyPrice,
+                            item.quantity,
+                            item.buyFee,
+                            item.sellFee
+                        )
+                    : item.title.toLowerCase() === 'bitcoin'
+                      ? calcChange(item.price, item.buyPrice * btcInUsd, item.quantity, item.buyFee, item.sellFee)
+                      : calcChange(
+                            item.price,
+                            item.buyPrice * btcCurrentPrice,
+                            item.quantity,
+                            item.buyFee,
+                            item.sellFee
+                        ),
                 val:
                     currency.value === 'btc'
-                        ? (item.price / btcCurrentPrice) * item.quantity
-                        : item.price * item.quantity
+                    ? (item.price / btcCurrentPrice) * item.quantity
+                    : item.price * item.quantity
             };
         });
 
