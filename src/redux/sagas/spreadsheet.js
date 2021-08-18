@@ -1,24 +1,23 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import C from '../constants';
-import { request } from '../../api/api';
+import { request, SPREADSHEET_API } from '../../api/api';
 import { spreadsheetLoading, spreadsheetFetchDataSuccess, spreadsheetError } from '../actions/spreadsheet';
 import { schemaSpreadsheet } from '../../api/schemas';
 
 export function* fetchSpreadsheet(link) {
-    const SPREADSHEET_API = `https://spreadsheets.google.com/feeds/list/${link}/od6/public/values?alt=json`;
 
     yield put(spreadsheetLoading(true));
 
     try {
-        const { data } = yield call(request, SPREADSHEET_API);
+        const { data } = yield call(request, SPREADSHEET_API(link));
 
-        if (!data.feed.entry) {
+        if (!data.values.length) {
             yield put(spreadsheetLoading(false));
 
             return null;
         }
 
-        const normalizedData = schemaSpreadsheet(data.feed.entry);
+        const normalizedData = schemaSpreadsheet(data.values);
 
         yield put(spreadsheetFetchDataSuccess(normalizedData));
         yield put(spreadsheetLoading(false));
