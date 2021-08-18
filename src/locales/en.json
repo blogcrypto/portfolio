@@ -46,7 +46,7 @@
     "sell_fee": "Sell fee",
     "not_available_in_demo_version": "Not available in demo version",
     "coin_not_found": "The coin was not found. You can find a list of supported coins on the About tab",
-    "date": "Date",
+    "notes": "Notes",
     "collapse_groups": "Collapse / expand all groups",
     "contacts_message": "If you find a bug or you want to leave a review.",
     "contacts_button": "Contacts",
