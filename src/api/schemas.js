@@ -17,7 +17,7 @@ export const schemaSpreadsheet = data => {
         buyFee: parseFloat(item[3].replace(',', '.')) || 0,
         sellFee: parseFloat(item[4].replace(',', '.')) || 0,
         wallet: item[5],
-        date: item[6]
+        notes: item[6]
     }));
 };
 

@@ -24,7 +24,7 @@ export const TableRow = React.memo((props) => {
         quantity = 0,
         buyFee = 0,
         sellFee = 0,
-        date,
+        notes,
         wallet,
         profit = 0,
         change = 0,
@@ -288,7 +288,7 @@ export const TableRow = React.memo((props) => {
                 </Typography>
             </div>
 
-            { !group && <TablePopover buyFee={ buyFee } sellFee={ sellFee } date={ date } /> }
+            { !group && <TablePopover buyFee={ buyFee } sellFee={ sellFee } notes={ notes } /> }
         </>
     );
 });
