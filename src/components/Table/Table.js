@@ -66,7 +66,7 @@ export default function Table({ handleClickOpen }) {
                 <div style={{ color: 'red', margin: '1rem 0 0.5rem' }}>{t('spreadsheet_error')}</div>
                 <div>
                     <a
-                        href={`https://spreadsheets.google.com/feeds/list/${spreadsheet.link}/od6/public/values?alt=json`}
+                        href={`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheet.link}/values/a1:g1000?alt=json&key=AIzaSyDD7GUv14Utck9mp8Ja5cIEdsy9-kzHOtM`}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{ fontWeight: 'bolder' }}

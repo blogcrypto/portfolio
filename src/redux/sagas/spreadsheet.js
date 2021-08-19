@@ -21,7 +21,6 @@ export function* fetchSpreadsheet(link) {
 
         yield put(spreadsheetFetchDataSuccess(normalizedData));
         yield put(spreadsheetLoading(false));
-
         return normalizedData;
     } catch (err) {
         yield put(spreadsheetError(`Spreadsheet error! ${err}`));

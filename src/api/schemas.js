@@ -12,13 +12,13 @@ export const schemaSpreadsheet = data => {
     return editedData.map(item => ({
         id: uuidv4(),
         title: item[0],
-        buyPrice: parseFloat(item[2].replace(',', '.')),
-        quantity: parseFloat(item[1].replace(/\s+/g, '').replace(',', '.')),
-        buyFee: parseFloat(item[3].replace(',', '.')) || 0,
-        sellFee: parseFloat(item[4].replace(',', '.')) || 0,
+        buyPrice: item[2] ? parseFloat(item[2].replace(',', '.')) : 0,
+        quantity: item[1] ? parseFloat(item[1].replace(/\s+/g, '').replace(',', '.')) : 0,
+        buyFee: item[3] ? parseFloat(item[3].replace(',', '.')) : 0,
+        sellFee: item[4] ? parseFloat(item[4].replace(',', '.')) : 0,
         wallet: item[5],
         notes: item[6]
-    }));
+   }));
 };
 
 export const schemaMarket = data => data.map(item => ({
