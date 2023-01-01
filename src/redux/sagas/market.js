@@ -29,7 +29,7 @@ function* fetchMarket({ payload: { spreadsheet, currency } }) {
         const { data } = yield call(
             request,
             `${MARKET_API}coins/markets`,
-            `vs_currency=${currency}&ids=${coinsIdList.join(',')}`
+            `per_page=1000&vs_currency=${currency}&ids=${coinsIdList.join(',')}`
         );
         const normalizedData = schemaMarket(data);
 
